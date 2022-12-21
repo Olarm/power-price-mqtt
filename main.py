@@ -90,7 +90,7 @@ class PowerControl():
 
 
 if __name__ == "__main__":
-    logger.info(f"Running script at {datetime.now()}")
+    logger.info(f"Running script at {datetime.datetime.now()}")
     try:
         PowerControl()
         logger.info("Successfully published power price.")
