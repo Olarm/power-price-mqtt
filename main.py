@@ -8,7 +8,7 @@ import paho.mqtt.client as mqtt
 import logging
 from sys import stdout
 
-from secrets import *
+from my_secrets import *
 
 # Define logger
 logger = logging.getLogger('power_price')
