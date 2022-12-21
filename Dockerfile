@@ -3,7 +3,7 @@ RUN apt-get update && apt-get -y install cron
 
 WORKDIR /app
 
-COPY requirements.txt main.py secrets.py /app/
+COPY requirements.txt main.py my_secrets.py /app/
 COPY crontab /etc/cron.d/crontab
 
 RUN pip install -r requirements.txt
