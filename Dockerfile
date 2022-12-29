@@ -3,13 +3,14 @@ RUN apt-get update && apt-get -y install cron
 
 WORKDIR /app
 
-COPY requirements.txt main.py my_secrets.py /app/
-COPY crontab /etc/cron.d/crontab
-
+COPY requirements.txt main.py /app/
 RUN pip install -r requirements.txt
 
+COPY crontab /etc/cron.d/crontab
 RUN chmod 0644 /etc/cron.d/crontab
-RUN /usr/bin/crontab /etc/cron.d/crontab
+RUN crontab /etc/cron.d/crontab
+RUN touch /var/log/cron.log
 
 # run crond as main process of container
-CMD ["cron", "-f"]
+#CMD ["cron", "-f"]
+CMD cron && tail -f /var/log/cron.log

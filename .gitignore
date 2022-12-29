@@ -1,2 +1,5 @@
 my_secrets.py
 
+config
+venv
+__pycache__
