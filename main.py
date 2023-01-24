@@ -66,7 +66,7 @@ class PowerControl():
 
     def get_eur_nok_conversion(self):
         if self.eur_nok != None and self.conversion_ts != None:
-            if self.conversion_ts > pd.Timestamp(datetime.date.today() - datetime.timedelta(hours=1), tz="Europe/Oslo"):
+            if self.conversion_ts > pd.Timestamp(datetime.date.today() - datetime.timedelta(hours=24), tz="Europe/Oslo"):
                 return
 
         exchange_token = self.config.get("EXCHANGE_TOKEN")
