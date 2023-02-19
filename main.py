@@ -39,7 +39,7 @@ class PowerControl():
 
     def read_config(self):
         try:
-            self.config = toml.load("/app/config.toml")
+            self.config = toml.load("/app/config/config.toml")
         except Exception as e:
             logger.error(f"Failed to read config file with: {e}")
             #os.kill(os.getppid(), signal.SIGTERM)
