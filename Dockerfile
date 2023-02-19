@@ -1,5 +1,5 @@
 FROM python:3.10-slim-buster
-RUN apt-get update && apt-get -y install cron
+RUN apt-get update && apt-get -y install apt-utils cron 
 
 WORKDIR /app
 
